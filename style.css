@@ -1,0 +1,354 @@
+/* ==========================================================================
+   Design Variables (Simple & Clean)
+   ========================================================================== */
+:root {
+  --bg-app: #1e293b;
+  --bg-card: #0f172a;
+  --border-color: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  
+  --color-primary: #38bdf8;
+  --color-primary-hover: #0ea5e9;
+  
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --radius-sm: 4px;
+  --radius-md: 8px;
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  padding: 20px;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   App Container & Header
+   ========================================================================== */
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.app-header {
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 15px;
+}
+
+.app-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* ==========================================================================
+   Grid Layout
+   ========================================================================== */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Card Layouts (Simple & Flat)
+   ========================================================================== */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+/* ==========================================================================
+   Form Fields
+   ========================================================================== */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group-box {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  background: rgba(0,0,0,0.1);
+}
+
+.group-title {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-row label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+input[type="number"] {
+  width: 100%;
+  background: #020617;
+  border: 1px solid var(--border-color);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* Buttons */
+.btn {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #0f172a;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-hover);
+}
+
+.btn-secondary {
+  background: #334155;
+  color: #fff;
+  border: 1px solid #475569;
+}
+
+.btn-secondary:hover {
+  background: #475569;
+}
+
+.btn-sm {
+  padding: 4px 8px;
+  font-size: 0.75rem;
+}
+
+/* ==========================================================================
+   Spreadsheet Tables
+   ========================================================================== */
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: #020617;
+  margin-bottom: 16px;
+}
+
+.spreadsheet-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.spreadsheet-table th {
+  background: #0f172a;
+  color: var(--text-secondary);
+  font-weight: 600;
+  padding: 8px 12px;
+  border-bottom: 2px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.spreadsheet-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  color: #e2e8f0;
+}
+
+.spreadsheet-table tbody tr {
+  cursor: pointer;
+}
+
+.spreadsheet-table tbody tr:hover {
+  background: #1e293b;
+}
+
+.spreadsheet-table tbody tr.selected {
+  background: #0369a1;
+  color: #fff;
+}
+
+.spreadsheet-table tbody tr.selected td {
+  color: #fff;
+}
+
+.table-placeholder {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 30px !important;
+  font-family: var(--font-sans) !important;
+}
+
+.text-success { color: var(--color-success) !important; font-weight: 600; }
+.text-warning { color: var(--color-warning) !important; }
+.text-error { color: var(--color-error) !important; }
+
+/* Status cell badges */
+.status-pill {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-pill.exact {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--color-success);
+}
+
+.status-pill.overshoot {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--color-error);
+}
+
+.status-pill.undershoot {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--color-warning);
+}
+
+/* ==========================================================================
+   Teleport Command Box
+   ========================================================================== */
+.teleport-command-box {
+  background: #020617;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.command-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.command-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.command-container code {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-primary);
+  background: #0f172a;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  flex-grow: 1;
+  word-break: break-all;
+  user-select: all;
+}
+
+.app-footer {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 2px;
+}
