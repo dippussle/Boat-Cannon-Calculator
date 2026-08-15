@@ -12,7 +12,6 @@ const targetZInput = document.getElementById("target-z");
 
 const maxBoatStackInput = document.getElementById("max-boat-stack");
 const maxTicksInput = document.getElementById("max-ticks");
-const cannonDelayInput = document.getElementById("cannon-delay");
 const powderSnowVersionInput = document.getElementById("powder-snow-version");
 
 const btnCalculate = document.getElementById("btn-calculate");
@@ -66,7 +65,7 @@ function runSolver() {
   
   const maxBoatStack = parseInt(maxBoatStackInput.value, 10) || 50;
   const maxTicks = parseInt(maxTicksInput.value, 10) || 200;
-  const cannonDelay = parseInt(cannonDelayInput.value, 10) || 0;
+  const cannonDelay = 0;
   const powderSnowMult = parseFloat(powderSnowVersionInput.value) || 0.95;
   
   // Base motion per boat without snow factor = 0.0413265304548704 / 0.95
